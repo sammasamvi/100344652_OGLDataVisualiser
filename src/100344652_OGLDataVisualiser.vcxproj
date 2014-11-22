@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{263C33E8-54C4-42B9-92E4-F5A18BC37F9D}</ProjectGuid>
+    <ProjectGuid>{1B5B8956-911C-4B68-BB70-A74BF4FA9A98}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>My100344652_OGLDataVisualiser</RootNamespace>
   </PropertyGroup>
@@ -57,7 +57,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;opengl32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -79,15 +79,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="OGLDrawingContext.cpp" />
-    <ClCompile Include="Win32AppWindow.cpp" />
-    <ClCompile Include="Win32Main.cpp" />
+    <ClInclude Include="OGLBarChart.h" />
+    <ClInclude Include="OGLRenderable.h" />
+    <ClInclude Include="OGLRenderContext.h" />
+    <ClInclude Include="OGLScene.h" />
+    <ClInclude Include="OGLShape2D.h" />
+    <ClInclude Include="OGLRectangle.h" />
+    <ClInclude Include="Win32ApplicatoinWindow.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OGLDrawingContext.h" />
-    <ClInclude Include="OGLScene.h" />
-    <ClInclude Include="Win32AppWindow.h" />
-    <ClInclude Include="Win32Main.h" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="OGLRectangle.cpp" />
+    <ClCompile Include="OGLRenderContext.cpp" />
+    <ClCompile Include="OGLShape2D.cpp" />
+    <ClCompile Include="OGLStructs.h" />
+    <ClCompile Include="Win32ApplicationWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

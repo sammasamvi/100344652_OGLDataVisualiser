@@ -13,36 +13,81 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Win32">
-      <UniqueIdentifier>{686fa7d3-1c41-407f-b746-67ea4de94d11}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\OpenGL">
-      <UniqueIdentifier>{09194148-0955-4e69-8685-5f2c5785b66e}</UniqueIdentifier>
+      <UniqueIdentifier>{211d545b-8640-4f7e-9544-e83753c69c0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL\OpenGLCore">
+      <UniqueIdentifier>{63f5cf9c-195d-4046-927f-79b990929cee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OpenGL\OpenGLShapes">
+      <UniqueIdentifier>{c2e911f7-7d5d-4f2c-b549-be2dfed6ab61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Win32">
+      <UniqueIdentifier>{2b55a6eb-ae30-4da6-94e7-0e589750f7c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Win32\Win32Core">
+      <UniqueIdentifier>{2c5537cf-aca6-4038-97e9-930e04950336}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL">
+      <UniqueIdentifier>{ee926d3c-ac7e-4d62-b8fc-3b7e1e374363}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Win32">
+      <UniqueIdentifier>{14097cdf-3e5f-4d24-af47-cb51e603edb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Win32\Win32Core">
+      <UniqueIdentifier>{299746d0-ab54-4e69-b118-d38e62366df5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL\OpenGLCore">
+      <UniqueIdentifier>{09a436b5-65f3-49e6-a3d8-a186dea7bc84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL\OpenGLScenes">
+      <UniqueIdentifier>{e9230712-430a-4874-b06b-828b14fe7450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OpenGL\OpenGLShapes">
+      <UniqueIdentifier>{89e8ee11-966d-4828-9daf-18c1c2909711}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Win32Main.cpp">
-      <Filter>Source Files\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="Win32AppWindow.cpp">
-      <Filter>Source Files\Win32</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLDrawingContext.cpp">
-      <Filter>Source Files\OpenGL</Filter>
-    </ClCompile>
+    <ClInclude Include="OGLScene.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="OGLShape2D.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="OGLRenderContext.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="OGLRenderable.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="OGLBarChart.h">
+      <Filter>Header Files\OpenGL\OpenGLScenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Win32ApplicatoinWindow.h">
+      <Filter>Header Files\Win32\Win32Core</Filter>
+    </ClInclude>
+    <ClInclude Include="OGLRectangle.h">
+      <Filter>Header Files\OpenGL\OpenGLShapes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Win32Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OGLScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Win32AppWindow.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="OGLDrawingContext.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files\Win32\Win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OGLStructs.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="Win32ApplicationWindow.cpp">
+      <Filter>Source Files\Win32\Win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="OGLRenderContext.cpp">
+      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="OGLRectangle.cpp">
+      <Filter>Source Files\OpenGL\OpenGLShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="OGLShape2D.cpp">
+      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
