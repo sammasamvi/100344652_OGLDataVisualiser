@@ -1,14 +1,12 @@
 #ifndef OGL_Rectangle_H
 #define OGL_Rectangle_H
 
-#include "OGLShape2D.h"
+#include "OGLShape.h"
 
-class OGLRectangle : public OGLShape2D
+class OGLRectangle : public OGLShape
 {
-	private:
-	
 	public:
-		OGLRectangle();
+		OGLRectangle(float width, float height, homogenCoord& position) :OGLShape(width, height, position) {}
 
 		bool render();
 };

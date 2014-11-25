@@ -1,5 +1,4 @@
 #include "OGLRenderContext.h"
-#include <gl\GL.h>
 
 OGLRenderContext::OGLRenderContext(HWND _windowHandle)
 {
@@ -75,7 +74,7 @@ bool OGLRenderContext::render()
 
 	if (renderContextScene)
 		rendered = renderContextScene->render();
-		
+
 	glFlush();
 	SwapBuffers(renderingDeviceContextHandle);
 	
@@ -88,7 +87,12 @@ void OGLRenderContext::resize(int width, int height)
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(-0.2*width, 0.2*width, -0.2*height, 0.2*height, -1.0, 1.0);
+	glOrtho(0.0,    //left
+		    width,  //right
+			0.0,    //bottom
+			height, //top
+			-1.0,   //near
+			1.0);   //far
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();

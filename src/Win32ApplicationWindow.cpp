@@ -63,8 +63,6 @@ bool Win32ApplicationWindow::initApplicationWindow(HINSTANCE applicationInstance
 	return false;
 }
 
-
-
 int Win32ApplicationWindow::run(int nCmdShow, int width, int height)
 {
 	applicationWindowInstance->createApplicationWindow(nCmdShow, width, height);
@@ -99,12 +97,15 @@ LRESULT CALLBACK Win32ApplicationWindow::WndProc(HWND windowHandle, UINT message
 		case WM_CLOSE:
 		case WM_DESTROY:
 			PostQuitMessage(0);
-			break;
+			return 0;
 
 		case WM_PAINT:
 			applicationWindowInstance->oglRenderContext->render();
 			return 0;
-			break;
+
+		case WM_SIZE:
+			applicationWindowInstance->oglRenderContext->resize(LOWORD(_LPARAM), HIWORD(_LPARAM));
+			return 0;
 
 		default:
 			return DefWindowProc(windowHandle, message, _WPARAM, _LPARAM);

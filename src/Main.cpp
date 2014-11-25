@@ -16,7 +16,7 @@ int APIENTRY _tWinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstanc
 	}
 	else
 	{
-		return Win32ApplicationWindow::run(nCmdShow, 1024, 700);
+		return Win32ApplicationWindow::run(nCmdShow, 1024, 768);
 	}
 
 	return -1;

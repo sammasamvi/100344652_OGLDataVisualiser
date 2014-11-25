@@ -79,11 +79,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="OGLShape.h" />
+    <ClInclude Include="homogenCoord.h" />
     <ClInclude Include="OGLBarChart.h" />
     <ClInclude Include="OGLRenderable.h" />
     <ClInclude Include="OGLRenderContext.h" />
     <ClInclude Include="OGLScene.h" />
-    <ClInclude Include="OGLShape2D.h" />
     <ClInclude Include="OGLRectangle.h" />
     <ClInclude Include="Win32ApplicatoinWindow.h" />
   </ItemGroup>
@@ -91,8 +92,8 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="OGLRectangle.cpp" />
     <ClCompile Include="OGLRenderContext.cpp" />
-    <ClCompile Include="OGLShape2D.cpp" />
-    <ClCompile Include="OGLStructs.h" />
+    <ClCompile Include="homogenCoord.cpp" />
+    <ClCompile Include="OGLShape.cpp" />
     <ClCompile Include="Win32ApplicationWindow.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

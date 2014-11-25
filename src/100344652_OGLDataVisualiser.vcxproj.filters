@@ -46,12 +46,15 @@
     <Filter Include="Header Files\OpenGL\OpenGLShapes">
       <UniqueIdentifier>{89e8ee11-966d-4828-9daf-18c1c2909711}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\OpenGL\Math">
+      <UniqueIdentifier>{f6f01e52-1581-4d80-9b9d-f9c3cd6ccd10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{6debfccb-c906-4e56-944e-7ae078015fdd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="OGLScene.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
-    </ClInclude>
-    <ClInclude Include="OGLShape2D.h">
       <Filter>Header Files\OpenGL\OpenGLCore</Filter>
     </ClInclude>
     <ClInclude Include="OGLRenderContext.h">
@@ -69,13 +72,16 @@
     <ClInclude Include="OGLRectangle.h">
       <Filter>Header Files\OpenGL\OpenGLShapes</Filter>
     </ClInclude>
+    <ClInclude Include="OGLShape.h">
+      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="homogenCoord.h">
+      <Filter>Header Files\OpenGL\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files\Win32\Win32Core</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLStructs.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
     </ClCompile>
     <ClCompile Include="Win32ApplicationWindow.cpp">
       <Filter>Source Files\Win32\Win32Core</Filter>
@@ -86,7 +92,10 @@
     <ClCompile Include="OGLRectangle.cpp">
       <Filter>Source Files\OpenGL\OpenGLShapes</Filter>
     </ClCompile>
-    <ClCompile Include="OGLShape2D.cpp">
+    <ClCompile Include="homogenCoord.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="OGLShape.cpp">
       <Filter>Source Files\OpenGL\OpenGLCore</Filter>
     </ClCompile>
   </ItemGroup>

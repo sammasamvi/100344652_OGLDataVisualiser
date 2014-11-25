@@ -5,9 +5,6 @@
 
 class OGLBarChart final : public OGLScene
 {
-	private:
-
-
 	public:
 		bool close();
 		bool render();
