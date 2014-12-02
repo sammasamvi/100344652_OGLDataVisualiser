@@ -1,24 +1,30 @@
-﻿Build started 25/11/2014 03:23:02.
-     1>Project "C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" on node 2 (Build target(s)).
+﻿Build started 02/12/2014 19:52:38.
+     1>Project "C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Main.cpp OGLRectangle.cpp OGLRenderContext.cpp Win32ApplicationWindow.cpp
-         Win32ApplicationWindow.cpp
-     1>c:\users\kosetsu\documents\github\100344652_ogldatavisualiser\src\win32applicationwindow.cpp(60): warning C4800: 'ATOM' : forcing value to bool 'true' or 'false' (performance warning)
-         OGLRenderContext.cpp
-     1>c:\users\kosetsu\documents\github\100344652_ogldatavisualiser\src\oglrendercontext.cpp(110): warning C4800: 'OGLScene *' : forcing value to bool 'true' or 'false' (performance warning)
-         OGLRectangle.cpp
-         Main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt OGLBarChart.cpp OGLRenderContext.cpp OGLShape.cpp
+         OGLShape.cpp
          Generating Code...
+         Compiling...
+         OGLBarChart.cpp
+         Generating Code...
+         Skipping... (no relevant changes detected)
+         OGLRenderContext.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe" /INCREMENTAL /NOLOGO kernel32.lib opengl32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.lib" /MACHINE:X86 Debug\Main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe" /INCREMENTAL /NOLOGO kernel32.lib opengl32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.lib" /MACHINE:X86 Debug\Colour.obj
+         Debug\Main.obj
+         Debug\Margin.obj
+         Debug\OGLChart.obj
+         Debug\OGLDataRepresenter.obj
          Debug\OGLRectangle.obj
          Debug\OGLRenderContext.obj
          Debug\homogenCoord.obj
+         Debug\OGLBarChart.obj
+         Debug\OGLScene.obj
          Debug\OGLShape.obj
          Debug\Win32ApplicationWindow.obj
-         100344652_OGLDataVisualiser.vcxproj -> C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe
-     1>Done Building Project "C:\Users\Kosetsu\Documents\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" (Build target(s)).
+         100344652_OGLDataVisualiser.vcxproj -> C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe
+     1>Done Building Project "C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.52
+Time Elapsed 00:00:02.22

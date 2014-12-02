@@ -1,78 +1,93 @@
 #include "homogenCoord.h"
 
-homogenCoord::homogenCoord(float x, float y, bool isVector) : homogenCoord(x, y, 0.0f, isVector)
-{ }
+homogenCoord::homogenCoord(int x, int y, bool isVector)
+             :homogenCoord(x, y, 0, isVector ? 0:1)
+             {}
 
-homogenCoord::homogenCoord(float x, float y, float z, bool isVector)
+homogenCoord::homogenCoord(int x, int y, int z, bool isVector)
+             :homogenCoord(x, y, z, isVector ? 0:1)
+             {}
+
+homogenCoord::homogenCoord(int x, int y, int z, int w)
 {
-	_w = isVector ? 0.0f:1.0f;
+	if (w > 0)
+	{
+		_w = 1;
+	}
+	else
+	{
+		_w = 0;
+	}
 	_x = x;
 	_y = y;
 	_z = z;
 }
 
+void homogenCoord::copy(const homogenCoord& original)
+{
+	_w = original.getW();
+	_x = original.getX();
+	_y = original.getY();
+	_z = original.getZ();
+}
+
 homogenCoord::homogenCoord(const homogenCoord& original)
 {
-	_x = original._x;
-	_y = original._y;
-	_w = original._w;
+	copy(original);
 }
 
-homogenCoord& homogenCoord::operator+(const homogenCoord& rhs) const
-{
-	float newX = this->_x + rhs._x;
-	float newY = this->_y + rhs._y;
-	float newZ = this->_z + rhs._z;
-
-	return homogenCoord(newX, newY, newZ, resultIsVector(this->_w, rhs._w));
-}
-
-homogenCoord& homogenCoord::operator-(const homogenCoord& rhs) const
-{
-	float newX = this->_x - rhs._x;
-	float newY = this->_y - rhs._y;
-	float newZ = this->_z - rhs._z;
-
-	return homogenCoord(newX, newY, newZ, resultIsVector(this->_w, rhs._w));
-}
-
-homogenCoord& homogenCoord::operator=(const homogenCoord& rhs)
-{
-	if (this == &rhs)
-	{
-		return *this;
-	}
-
-	return homogenCoord(rhs._x, rhs._y, rhs._z, resultIsVector(this->_w, rhs._w));
-}
-
-float homogenCoord::getW()
+int homogenCoord::getW() const
 {
 	return _w;
 }
 
-float homogenCoord::getX()
+int homogenCoord::getX() const
 {
 	return _x;
 }
 
-float homogenCoord::getY()
+int homogenCoord::getY() const
 {
 	return _y;
 }
 
-float homogenCoord::getZ()
+int homogenCoord::getZ() const
 {
 	return _z;
 }
 
-bool homogenCoord::resultIsVector(float lhs_w, float rhs_w)
+int homogenCoord::isVector(int rhs) const
 {
-	// if either value is 1 the outcome will be a point
-	if (lhs_w > 0 || rhs_w > 0)
+	if (rhs > 0 || this->_w > 0)
 	{
-		return false;
+		return 1;
 	}
 
-	return true;
+	return 0;
+}
+
+homogenCoord homogenCoord::operator+(const homogenCoord& rhs) const
+{
+	int newX = this->_x + rhs.getX();
+	int newY = this->_y + rhs.getY();
+	int newZ = this->_z + rhs.getZ();
+
+	return homogenCoord(newX, newY, newZ, isVector(rhs._w));
+}
+
+homogenCoord homogenCoord::operator-(const homogenCoord& rhs) const
+{
+	int newX = this->_x - rhs.getX();
+	int newY = this->_y - rhs.getY();
+	int newZ = this->_z - rhs.getZ();
+
+	return homogenCoord(newX, newY, newZ, isVector(rhs._w));
+}
+
+void homogenCoord::operator=(const homogenCoord& rhs)
+{
+	if (this != &rhs)
+	{
+		copy(rhs);
+	}
 }

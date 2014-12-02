@@ -1,15 +1,25 @@
 #include "OGLRenderContext.h"
+#include "OGLBarChart.h"
 
 OGLRenderContext::OGLRenderContext(HWND _windowHandle)
 {
 	windowHandle                 = _windowHandle;
 	renderingDeviceContextHandle = GetDC(windowHandle);
-	renderContextScene			 = NULL;
+	renderContextScene = new OGLBarChart(*this);
+	renderContextScene->setBackgroudColour(255, 0, 0);
 }
 
 OGLRenderContext::~OGLRenderContext()
 {
 	
+}
+
+void OGLRenderContext::assertBackgroundColour()
+{
+    glClearColor(_bColour->getOGLColourVal(Red),
+                 _bColour->getOGLColourVal(Green),
+                 _bColour->getOGLColourVal(Blue),
+                 1.0f); // Alpha channel
 }
 
 bool OGLRenderContext::close()
@@ -59,7 +69,7 @@ void OGLRenderContext::initOGLRenderContext(int renderContextWidth, int rederCon
 
 void OGLRenderContext::initOGLState()
 {
-	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	setBackgroudColour(255, 255, 255);
 
 	glDisable(GL_DEPTH_TEST);
 	glDisable(GL_CULL_FACE);
@@ -83,21 +93,38 @@ bool OGLRenderContext::render()
 
 void OGLRenderContext::resize(int width, int height)
 {
-	glViewport(0, 0, width, height);
+	OGLScene::resize(width, height);
+
+	glViewport(0, 0, _width, _height);
 
 	glMatrixMode(GL_PROJECTION);
 	glLoadIdentity();
-	glOrtho(0.0,    //left
-		    width,  //right
-			0.0,    //bottom
-			height, //top
-			-1.0,   //near
-			1.0);   //far
+	glOrtho(0.0,     //left
+            _width,  //right
+            0.0,     //bottom
+            _height, //top
+            -1.0,    //near
+            1.0);    //far
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
 
+	if (renderContextScene)
+		renderContextScene->resize(_width, _height);
+
 	return;
+}
+
+void OGLRenderContext::setBackgroudColour(int red, int green, int blue)
+{
+	OGLScene::setBackgroudColour(red, green, blue);
+	assertBackgroundColour();
+}
+
+void OGLRenderContext::setBackgroudColour(Colour& colour)
+{
+	OGLScene::setBackgroudColour(colour);
+	assertBackgroundColour();
 }
 
 bool OGLRenderContext::setRenderScene(OGLScene* renderContextScene)

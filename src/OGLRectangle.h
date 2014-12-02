@@ -3,10 +3,10 @@
 
 #include "OGLShape.h"
 
-class OGLRectangle : public OGLShape
+class OGLRectangle final : public OGLShape
 {
 	public:
-		OGLRectangle(float width, float height, homogenCoord& position) :OGLShape(width, height, position) {}
+		OGLRectangle(int x, int y, int width, int height) :OGLShape(x, y, width, height) {}
 
 		bool render();
 };

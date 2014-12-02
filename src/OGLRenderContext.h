@@ -14,6 +14,7 @@ class OGLRenderContext final : public OGLScene
 		HDC		  renderingDeviceContextHandle;
 		HWND	  windowHandle;
 	
+		void assertBackgroundColour();
 		void initOGLState();
 
 	public:
@@ -24,6 +25,8 @@ class OGLRenderContext final : public OGLScene
 		void initOGLRenderContext(int renderContextWidth, int renderContextHeight);
 		bool render();
 		void resize(int width, int height);
+		void setBackgroudColour(int red, int green, int blue);
+		void setBackgroudColour(Colour& colour);
 		bool setRenderScene(OGLScene* renderContextScene);
 };
 
