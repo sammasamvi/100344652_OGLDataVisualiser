@@ -1,30 +1,27 @@
-﻿Build started 02/12/2014 19:52:38.
+﻿Build started 11/12/2014 07:50:03.
      1>Project "C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt OGLBarChart.cpp OGLRenderContext.cpp OGLShape.cpp
-         OGLShape.cpp
-         Generating Code...
-         Compiling...
-         OGLBarChart.cpp
-         Generating Code...
-         Skipping... (no relevant changes detected)
-         OGLRenderContext.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /FR"Debug\\" /Gd /TP /analyze- /errorReport:prompt openGLDataVisualiser\material_data_representer.cpp
+         material_data_representer.cpp
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe" /INCREMENTAL /NOLOGO kernel32.lib opengl32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.lib" /MACHINE:X86 Debug\Colour.obj
-         Debug\Main.obj
-         Debug\Margin.obj
-         Debug\OGLChart.obj
-         Debug\OGLDataRepresenter.obj
-         Debug\OGLRectangle.obj
-         Debug\OGLRenderContext.obj
-         Debug\homogenCoord.obj
-         Debug\OGLBarChart.obj
-         Debug\OGLScene.obj
-         Debug\OGLShape.obj
-         Debug\Win32ApplicationWindow.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib opengl32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.lib" /MACHINE:X86 Debug\application_window_resources.res
+         Debug\main.obj
+         Debug\colour.obj
+         Debug\homogeneous_coordinate.obj
+         Debug\material_renderable.obj
+         Debug\renderable.obj
+         Debug\renderContext.obj
+         Debug\material_data_representer.obj
+         Debug\material_rectangle.obj
+         Debug\applicationWindow.obj
+         Debug\open_dialog_wrapper.obj
+         Debug\cSVFileReader.obj
+         Debug\fileReader.obj
          100344652_OGLDataVisualiser.vcxproj -> C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.exe
+       BscMake:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\bscmake.exe /nologo /o"C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\Debug\100344652_OGLDataVisualiser.bsc" /n Debug\main.sbr Debug\colour.sbr Debug\homogeneous_coordinate.sbr Debug\material_renderable.sbr Debug\renderable.sbr Debug\renderContext.sbr Debug\material_data_representer.sbr Debug\material_rectangle.sbr Debug\applicationWindow.sbr Debug\open_dialog_wrapper.sbr Debug\cSVFileReader.sbr Debug\fileReader.sbr
      1>Done Building Project "C:\Users\ekita\Dropbox\Projects\GitHub\100344652_OGLDataVisualiser\src\100344652_OGLDataVisualiser.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:02.22
+Time Elapsed 00:00:03.10

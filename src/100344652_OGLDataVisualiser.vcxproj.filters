@@ -1,153 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Source Files\OpenGL">
-      <UniqueIdentifier>{211d545b-8640-4f7e-9544-e83753c69c0f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\OpenGL\OpenGLCore">
-      <UniqueIdentifier>{63f5cf9c-195d-4046-927f-79b990929cee}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\OpenGL\OpenGLShapes">
-      <UniqueIdentifier>{c2e911f7-7d5d-4f2c-b549-be2dfed6ab61}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Win32">
-      <UniqueIdentifier>{2b55a6eb-ae30-4da6-94e7-0e589750f7c0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\Win32\Win32Core">
-      <UniqueIdentifier>{2c5537cf-aca6-4038-97e9-930e04950336}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL">
-      <UniqueIdentifier>{ee926d3c-ac7e-4d62-b8fc-3b7e1e374363}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Win32">
-      <UniqueIdentifier>{14097cdf-3e5f-4d24-af47-cb51e603edb7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Win32\Win32Core">
-      <UniqueIdentifier>{299746d0-ab54-4e69-b118-d38e62366df5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\OpenGLCore">
-      <UniqueIdentifier>{09a436b5-65f3-49e6-a3d8-a186dea7bc84}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\OpenGLShapes">
-      <UniqueIdentifier>{89e8ee11-966d-4828-9daf-18c1c2909711}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\Math">
-      <UniqueIdentifier>{f6f01e52-1581-4d80-9b9d-f9c3cd6ccd10}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\OpenGLCharts">
-      <UniqueIdentifier>{e9230712-430a-4874-b06b-828b14fe7450}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\OpenGLCore\enums">
-      <UniqueIdentifier>{106840c5-772c-40fc-a0e4-a423c6e5b423}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\OpenGL\OpenGLCharts">
-      <UniqueIdentifier>{15850193-05a0-479d-8dc2-c29f25a480fe}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\OpenGL\OpenGLCharts\enums">
-      <UniqueIdentifier>{efb3449d-ac0b-4d62-ab13-e895b7cc7bc1}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\OpenGL\Math">
-      <UniqueIdentifier>{6debfccb-c906-4e56-944e-7ae078015fdd}</UniqueIdentifier>
-    </Filter>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="openGLCore\colour.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\renderable.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\renderContext.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\homogeneous_coordinate.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="win32Core\applicationWindow.cpp">
+      <Filter>souce\win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="win32Core\open_dialog_wrapper.cpp">
+      <Filter>souce\win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="win32Util\cSVFileReader.cpp">
+      <Filter>souce\win32Util</Filter>
+    </ClCompile>
+    <ClCompile Include="win32Util\fileReader.cpp">
+      <Filter>souce\win32Util</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLShapes\material_rectangle.cpp">
+      <Filter>souce\openGLShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\material_renderable.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLDataVisualiser\material_data_representer.cpp">
+      <Filter>souce\openGLDataVisualiser</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="OGLScene.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="openGLCore\enums\eColour.h">
+      <Filter>header\openGLCore\enum</Filter>
     </ClInclude>
-    <ClInclude Include="OGLRenderContext.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="openGLCore\enums\eMargin.h">
+      <Filter>header\openGLCore\enum</Filter>
     </ClInclude>
-    <ClInclude Include="OGLRenderable.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="openGLCore\colour.h">
+      <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="OGLBarChart.h">
-      <Filter>Header Files\OpenGL\OpenGLCharts</Filter>
+    <ClInclude Include="openGLCore\homogeneous_coordinate.h">
+      <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="Win32ApplicatoinWindow.h">
-      <Filter>Header Files\Win32\Win32Core</Filter>
+    <ClInclude Include="openGLCore\renderable.h">
+      <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="OGLRectangle.h">
-      <Filter>Header Files\OpenGL\OpenGLShapes</Filter>
+    <ClInclude Include="openGLCore\renderContext.h">
+      <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="OGLShape.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="win32Core\open_dialog_wrapper.h">
+      <Filter>header\win32Core</Filter>
     </ClInclude>
-    <ClInclude Include="homogenCoord.h">
-      <Filter>Header Files\OpenGL\Math</Filter>
+    <ClInclude Include="win32Core\application_window_resources.h">
+      <Filter>header\win32Core\resources</Filter>
     </ClInclude>
-    <ClInclude Include="OGLChart.h">
-      <Filter>Header Files\OpenGL\OpenGLCharts</Filter>
+    <ClInclude Include="win32Core\applicationWindow.h">
+      <Filter>header\win32Core</Filter>
     </ClInclude>
-    <ClInclude Include="Colour.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="win32Util\cSVFileReader.h">
+      <Filter>header\win32Util</Filter>
     </ClInclude>
-    <ClInclude Include="EColour.h">
-      <Filter>Header Files\OpenGL\OpenGLCore\enums</Filter>
+    <ClInclude Include="win32Util\fileReader.h">
+      <Filter>header\win32Util</Filter>
     </ClInclude>
-    <ClInclude Include="OGLDataRepresenter.h">
-      <Filter>Header Files\OpenGL\OpenGLCharts</Filter>
+    <ClInclude Include="openGLCore\enums\eDimention.h">
+      <Filter>header\openGLCore\enum</Filter>
     </ClInclude>
-    <ClInclude Include="EMargin.h">
-      <Filter>Header Files\OpenGL\OpenGLCore\enums</Filter>
+    <ClInclude Include="openGLShapes\material_rectangle.h">
+      <Filter>header\openGLShapes</Filter>
     </ClInclude>
-    <ClInclude Include="Margin.h">
-      <Filter>Header Files\OpenGL\OpenGLCore</Filter>
+    <ClInclude Include="openGLCore\material_renderable.h">
+      <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="EDimention.h">
-      <Filter>Header Files\OpenGL\OpenGLCore\enums</Filter>
+    <ClInclude Include="openGLDataVisualiser\material_data_representer.h">
+      <Filter>header\openGLDataVisualiser</Filter>
     </ClInclude>
-    <ClInclude Include="ECoordinate.h">
-      <Filter>Header Files\OpenGL\OpenGLCore\enums</Filter>
+    <ClInclude Include="openGLDataVisualiser\material_data_visualizer.h">
+      <Filter>header\openGLDataVisualiser</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
-      <Filter>Source Files\Win32\Win32Core</Filter>
-    </ClCompile>
-    <ClCompile Include="Win32ApplicationWindow.cpp">
-      <Filter>Source Files\Win32\Win32Core</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLRenderContext.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="homogenCoord.cpp">
-      <Filter>Source Files\OpenGL\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLShape.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLBarChart.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCharts</Filter>
-    </ClCompile>
-    <ClCompile Include="Colour.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLDataRepresenter.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCharts</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLScene.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLChart.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCharts</Filter>
-    </ClCompile>
-    <ClCompile Include="Margin.cpp">
-      <Filter>Source Files\OpenGL\OpenGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="OGLRectangle.cpp">
-      <Filter>Source Files\OpenGL\OpenGLShapes</Filter>
-    </ClCompile>
+    <Filter Include="header">
+      <UniqueIdentifier>{8fd8d75c-6ed2-4a9b-92b6-18d08658c78c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\openGLCore">
+      <UniqueIdentifier>{6acb2427-7b71-4906-acce-c1526c51a877}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\win32Core">
+      <UniqueIdentifier>{5f48ab3a-3979-4a66-a490-eb535aa7015f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\openGLCore\enum">
+      <UniqueIdentifier>{bc8fd0cf-f4b8-414d-aa2b-91f8f061b2b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce">
+      <UniqueIdentifier>{d48aedb2-4aac-4b23-939f-f7f124a599c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\openGLCore">
+      <UniqueIdentifier>{fc54355a-1d2f-46e0-bcc5-18a441074215}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\win32Core">
+      <UniqueIdentifier>{1ca5e161-25d4-4270-8f0b-a9a9c1dc6139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\win32Core\resources">
+      <UniqueIdentifier>{7d9e2b48-eb35-4f14-98a2-69deaabb5835}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\win32Core\resources">
+      <UniqueIdentifier>{2d14e96c-f454-4049-991b-1b357155bcbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\win32Util">
+      <UniqueIdentifier>{77d66eab-3d60-48ef-9468-b72f2e0fb136}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\win32Util">
+      <UniqueIdentifier>{d86a7c0b-fb45-4e66-9d84-eb859fa2d83d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\openGLShapes">
+      <UniqueIdentifier>{ea860a68-4683-4626-8dc8-a45757f8cea3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\openGLShapes">
+      <UniqueIdentifier>{94aa8cc1-f8c4-41c6-a24a-bc63fb926687}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\openGLDataVisualiser">
+      <UniqueIdentifier>{0150fa0e-fc59-49cf-9469-339c78739533}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\openGLDataVisualiser">
+      <UniqueIdentifier>{9ec819d1-9035-4957-b99d-920f1fd5ca08}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="win32Core\application_window_resources.rc">
+      <Filter>souce\win32Core\resources</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{1B5B8956-911C-4B68-BB70-A74BF4FA9A98}</ProjectGuid>
+    <ProjectGuid>{B172E81D-FBAF-4A81-AB30-004D75FAEB2E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>My100344652_OGLDataVisualiser</RootNamespace>
   </PropertyGroup>
@@ -53,12 +53,16 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>kernel32.lib;opengl32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>kernel32.lib;user32.lib;opengl32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -79,36 +83,39 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Colour.h" />
-    <ClInclude Include="EColour.h" />
-    <ClInclude Include="ECoordinate.h" />
-    <ClInclude Include="EDimention.h" />
-    <ClInclude Include="EMargin.h" />
-    <ClInclude Include="Margin.h" />
-    <ClInclude Include="OGLChart.h" />
-    <ClInclude Include="OGLDataRepresenter.h" />
-    <ClInclude Include="OGLShape.h" />
-    <ClInclude Include="homogenCoord.h" />
-    <ClInclude Include="OGLBarChart.h" />
-    <ClInclude Include="OGLRenderable.h" />
-    <ClInclude Include="OGLRenderContext.h" />
-    <ClInclude Include="OGLScene.h" />
-    <ClInclude Include="OGLRectangle.h" />
-    <ClInclude Include="Win32ApplicatoinWindow.h" />
+    <ClInclude Include="openGLCore\colour.h" />
+    <ClInclude Include="openGLCore\enums\eColour.h" />
+    <ClInclude Include="openGLCore\enums\eDimention.h" />
+    <ClInclude Include="openGLCore\enums\eMargin.h" />
+    <ClInclude Include="openGLCore\homogeneous_coordinate.h" />
+    <ClInclude Include="openGLCore\material_renderable.h" />
+    <ClInclude Include="openGLCore\renderable.h" />
+    <ClInclude Include="openGLCore\renderContext.h" />
+    <ClInclude Include="openGLDataVisualiser\material_data_representer.h" />
+    <ClInclude Include="openGLDataVisualiser\material_data_visualizer.h" />
+    <ClInclude Include="openGLShapes\material_rectangle.h" />
+    <ClInclude Include="win32Core\applicationWindow.h" />
+    <ClInclude Include="win32Core\application_window_resources.h" />
+    <ClInclude Include="win32Core\open_dialog_wrapper.h" />
+    <ClInclude Include="win32Util\cSVFileReader.h" />
+    <ClInclude Include="win32Util\fileReader.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Colour.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Margin.cpp" />
-    <ClCompile Include="OGLChart.cpp" />
-    <ClCompile Include="OGLDataRepresenter.cpp" />
-    <ClCompile Include="OGLRectangle.cpp" />
-    <ClCompile Include="OGLRenderContext.cpp" />
-    <ClCompile Include="homogenCoord.cpp" />
-    <ClCompile Include="OGLBarChart.cpp" />
-    <ClCompile Include="OGLScene.cpp" />
-    <ClCompile Include="OGLShape.cpp" />
-    <ClCompile Include="Win32ApplicationWindow.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="openGLCore\colour.cpp" />
+    <ClCompile Include="openGLCore\homogeneous_coordinate.cpp" />
+    <ClCompile Include="openGLCore\material_renderable.cpp" />
+    <ClCompile Include="openGLCore\renderable.cpp" />
+    <ClCompile Include="openGLCore\renderContext.cpp" />
+    <ClCompile Include="openGLDataVisualiser\material_data_representer.cpp" />
+    <ClCompile Include="openGLShapes\material_rectangle.cpp" />
+    <ClCompile Include="win32Core\applicationWindow.cpp" />
+    <ClCompile Include="win32Core\open_dialog_wrapper.cpp" />
+    <ClCompile Include="win32Util\cSVFileReader.cpp" />
+    <ClCompile Include="win32Util\fileReader.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="win32Core\application_window_resources.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
