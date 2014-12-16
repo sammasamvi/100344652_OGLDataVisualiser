@@ -9,11 +9,7 @@
 class win32ApplicationWindow
 {
     private:
-		void*          _file_reader;
-
     	HINSTANCE      _applicationInstance;
-		OPENFILENAME   _common_dialog;
-		char           _common_dialog_szFile[MAX_PATH + 1];
 		HMENU          _menu;
 		renderContext* _oGLRenderContext;
     	bool           _open;

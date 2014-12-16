@@ -17,15 +17,6 @@
     <ClCompile Include="win32Core\applicationWindow.cpp">
       <Filter>souce\win32Core</Filter>
     </ClCompile>
-    <ClCompile Include="win32Core\open_dialog_wrapper.cpp">
-      <Filter>souce\win32Core</Filter>
-    </ClCompile>
-    <ClCompile Include="win32Util\cSVFileReader.cpp">
-      <Filter>souce\win32Util</Filter>
-    </ClCompile>
-    <ClCompile Include="win32Util\fileReader.cpp">
-      <Filter>souce\win32Util</Filter>
-    </ClCompile>
     <ClCompile Include="openGLShapes\material_rectangle.cpp">
       <Filter>souce\openGLShapes</Filter>
     </ClCompile>
@@ -55,20 +46,11 @@
     <ClInclude Include="openGLCore\renderContext.h">
       <Filter>header\openGLCore</Filter>
     </ClInclude>
-    <ClInclude Include="win32Core\open_dialog_wrapper.h">
-      <Filter>header\win32Core</Filter>
-    </ClInclude>
     <ClInclude Include="win32Core\application_window_resources.h">
       <Filter>header\win32Core\resources</Filter>
     </ClInclude>
     <ClInclude Include="win32Core\applicationWindow.h">
       <Filter>header\win32Core</Filter>
-    </ClInclude>
-    <ClInclude Include="win32Util\cSVFileReader.h">
-      <Filter>header\win32Util</Filter>
-    </ClInclude>
-    <ClInclude Include="win32Util\fileReader.h">
-      <Filter>header\win32Util</Filter>
     </ClInclude>
     <ClInclude Include="openGLCore\enums\eDimention.h">
       <Filter>header\openGLCore\enum</Filter>

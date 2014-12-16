@@ -1,25 +1,16 @@
 #include "applicationWindow.h"
 #include "application_window_resources.h"
-#include "open_dialog_wrapper.h"
-#include "..\win32Util\cSVFileReader.h"
 
 win32ApplicationWindow::win32ApplicationWindow()
 {
 	_oGLRenderContext = nullptr;
 	_menu             = LoadMenu(_applicationInstance, MAKEINTRESOURCE(IDR_MENU));
-
-	_file_reader = new cSVFileReader();
-
-	 static_cast<cSVFileReader*>(_file_reader)->set_file_path(R"(C:\Users\ekita\Downloads\Extracted\data_samples_01\adult_test_data.csv)");
-	 static_cast<cSVFileReader*>(_file_reader)->open_file();
 }
 
 win32ApplicationWindow::~win32ApplicationWindow()
 {
 	if (_oGLRenderContext)
 		delete _oGLRenderContext;
-
-	delete static_cast<cSVFileReader*>(_file_reader);
 }
 
 win32ApplicationWindow* win32ApplicationWindow::applicationWindowInstance = NULL;
@@ -32,21 +23,6 @@ void win32ApplicationWindow::createApplicationWindow(int nCmdShow, int width, in
 
 	if (!_windowHandle)
 		MessageBox(NULL, _T("Call to CreateWindow() failed!"), _T("ApplicationWindow"), NULL);
-
-
-	ZeroMemory(&_common_dialog, sizeof(_common_dialog));
-	memset(_common_dialog_szFile, '\0', sizeof(_common_dialog_szFile));
-
-	_common_dialog.lStructSize     = sizeof(_common_dialog);
-	_common_dialog.hwndOwner       = _windowHandle;
-	_common_dialog.lpstrFile       = (LPWSTR)_common_dialog_szFile;
-	_common_dialog.nMaxFile        = sizeof(_common_dialog_szFile);
-	_common_dialog.lpstrFilter     = L"CSV\0*.csv\0XML\0*.xml\0\0";
-	_common_dialog.nFilterIndex    = 1;
-	_common_dialog.lpstrFileTitle  = (LPWSTR)NULL;
-	_common_dialog.nMaxFileTitle   = 0;
-	_common_dialog.lpstrInitialDir = (LPWSTR)NULL;
-	_common_dialog.Flags           = OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST | OFN_READONLY;
 
 	_oGLRenderContext = new renderContext(_windowHandle);
 	_oGLRenderContext->init_renderContext(width, height);
@@ -94,7 +70,7 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 	switch (_WPARAM)
 	{
 	    case ID_CHARTMENU_BARCHART:
-			//applicationWindowInstance->_oGLRenderContext->set_render_scene();
+			// unimplimented 
 		    return 0;
 
 	    case ID_FILEMENU_ITEM_EXIT:
@@ -103,11 +79,7 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 	    	return 0;
 
 		case ID_FILEMENU_ITEM_OPENFILE:
-			if (GetOpenFileName(&applicationWindowInstance->_common_dialog))
-			{
-				applicationWindowInstance->read_file();
-			}
-
+			// broken
 			return 0;
 
 	    default:

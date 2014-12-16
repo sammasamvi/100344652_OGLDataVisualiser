@@ -96,9 +96,6 @@
     <ClInclude Include="openGLShapes\material_rectangle.h" />
     <ClInclude Include="win32Core\applicationWindow.h" />
     <ClInclude Include="win32Core\application_window_resources.h" />
-    <ClInclude Include="win32Core\open_dialog_wrapper.h" />
-    <ClInclude Include="win32Util\cSVFileReader.h" />
-    <ClInclude Include="win32Util\fileReader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
@@ -110,9 +107,6 @@
     <ClCompile Include="openGLDataVisualiser\material_data_representer.cpp" />
     <ClCompile Include="openGLShapes\material_rectangle.cpp" />
     <ClCompile Include="win32Core\applicationWindow.cpp" />
-    <ClCompile Include="win32Core\open_dialog_wrapper.cpp" />
-    <ClCompile Include="win32Util\cSVFileReader.cpp" />
-    <ClCompile Include="win32Util\fileReader.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="win32Core\application_window_resources.rc" />
