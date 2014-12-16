@@ -1,0 +1,16 @@
+#include "application_window_resources.h"
+#include <windows.h>
+
+IDR_MENU    MENU
+BEGIN
+    POPUP "File"
+	BEGIN
+	    MENUITEM    "Open Data File"       ID_FILEMENU_ITEM_OPENFILE
+		MENUITEM    "Close Application"    ID_FILEMENU_ITEM_EXIT
+	END
+
+	POPUP "Chart"
+	BEGIN
+	    MENUITEM    "Bar chart"    ID_CHARTMENU_BARCHART
+    END
+END
