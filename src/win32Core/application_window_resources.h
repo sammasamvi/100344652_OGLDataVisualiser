@@ -1,4 +1,0 @@
-#define ID_CHARTMENU_BARCHART     101
-#define ID_FILEMENU_ITEM_EXIT     102
-#define ID_FILEMENU_ITEM_OPENFILE 103
-#define IDR_MENU                  104
