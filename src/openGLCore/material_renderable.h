@@ -17,8 +17,6 @@ class material_renderable : public renderable
 		renderable*        get_shadow() const;
 		virtual bool       render();
 		virtual bool       resize(float width, float height);
-		virtual void       set_coordinates(const hCoordinate& value);
-		virtual void       set_coordinates(float x, float y, float z);
 };
 
 #endif
