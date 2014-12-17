@@ -32,6 +32,9 @@
     <ClCompile Include="win32Util\text_file_reader.cpp">
       <Filter>souce\win32Util</Filter>
     </ClCompile>
+    <ClCompile Include="win32Core\common_dialog_wrapper.cpp">
+      <Filter>souce\win32Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="openGLCore\enums\eColour.h">
@@ -81,6 +84,9 @@
     </ClInclude>
     <ClInclude Include="win32Util\enums\eFileState.h">
       <Filter>header\win32Util\enum</Filter>
+    </ClInclude>
+    <ClInclude Include="win32Core\common_dialog_wrapper.h">
+      <Filter>header\win32Core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

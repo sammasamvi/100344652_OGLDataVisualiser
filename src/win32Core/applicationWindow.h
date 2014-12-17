@@ -5,25 +5,26 @@
 #include <Windows.h>
 
 #include "..\openGLCore\renderContext.h"
+#include "common_dialog_wrapper.h"
 
 class win32ApplicationWindow
 {
     private:
-    	HINSTANCE      _applicationInstance;
-		HMENU          _menu;
-		renderContext* _oGLRenderContext;
-    	bool           _open;
-    	WNDCLASSEX     _windowExClassStruct;
-    	HWND           _windowHandle;
+    	HINSTANCE              _applicationInstance;
+		HMENU                  _menu;
+		renderContext*         _oGLRenderContext;
+    	bool                   _open;
+		common_dialog_wrapper* _open_dialog;
+    	WNDCLASSEX             _windowExClassStruct;
+    	HWND                   _windowHandle;
     
 		win32ApplicationWindow();
 		~win32ApplicationWindow();
-    
-		void                    read_file();
+
 		void                    createApplicationWindow(int nCmdShow, int width, int height);
     	void                    createWindowExClassStruct();
-		static LRESULT CALLBACK WndProc_menu_handle(HWND _windowHandle, UINT message, WPARAM _WPARAM, LPARAM _LPARAM);
     	bool                    registerWindowExClassStruct();
+		static LRESULT CALLBACK WndProc_menu_handle(HWND _windowHandle, UINT message, WPARAM _WPARAM, LPARAM _LPARAM);
     
     public:
 		static win32ApplicationWindow* applicationWindowInstance;

@@ -3,14 +3,17 @@
 
 win32ApplicationWindow::win32ApplicationWindow()
 {
-	_oGLRenderContext = nullptr;
-	_menu             = LoadMenu(_applicationInstance, MAKEINTRESOURCE(IDR_MENU));
+	_oGLRenderContext  = nullptr;
+	_menu              = LoadMenu(_applicationInstance, MAKEINTRESOURCE(IDR_MENU));
 }
 
 win32ApplicationWindow::~win32ApplicationWindow()
 {
 	if (_oGLRenderContext)
 		delete _oGLRenderContext;
+
+	if (_open_dialog)
+		delete _open_dialog;
 }
 
 win32ApplicationWindow* win32ApplicationWindow::applicationWindowInstance = NULL;
@@ -28,8 +31,11 @@ void win32ApplicationWindow::createApplicationWindow(int nCmdShow, int width, in
 	_oGLRenderContext->init_renderContext(width, height);
 	_oGLRenderContext->set_colour(255, 144, 0, 255);
 
-	SetMenu(_windowHandle, _menu);
+	_open_dialog = new common_dialog_wrapper(_windowHandle);
+	_open_dialog->set_title(L"Open Data File");
+	_open_dialog->set_filters(L"CSV\0*.csv\0XML\0*.xml\0\0");
 
+	SetMenu(_windowHandle, _menu);
 	ShowWindow(_windowHandle, nCmdShow); 
 	UpdateWindow(_windowHandle);
 }
@@ -65,6 +71,8 @@ bool win32ApplicationWindow::initApplicationWindow(HINSTANCE _applicationInstanc
 	return false;
 }
 
+#include "..\win32Util\text_file_reader.h"
+
 LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle, UINT message, WPARAM _WPARAM, LPARAM _LPARAM)
 {
 	switch (_WPARAM)
@@ -79,17 +87,13 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 	    	return 0;
 
 		case ID_FILEMENU_ITEM_OPENFILE:
-			// broken
+			applicationWindowInstance->_open_dialog->open();
+
 			return 0;
 
 	    default:
 			return DefWindowProc(_windowHandle, message, _WPARAM, _LPARAM);
 	}
-}
-
-void win32ApplicationWindow::read_file()
-{
-	// broken
 }
 
 int win32ApplicationWindow::run(int nCmdShow, int width, int height)
