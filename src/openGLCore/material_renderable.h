@@ -1,22 +1,28 @@
-#ifndef MATERIAL_RENDERABLE_SHAPE_H
-#define MATERIAL_RENDERABLE_SHAPE_H
+#ifndef MATERIAL_RENDERABLE_H
+#define MATERIAL_RENDERABLE_H
 
-#include "..\openGLCore\renderable.h"
+#include "renderable.h"
+#include "drop_shadow.h"
 
 class material_renderable : public renderable
 {
-    protected:
-		const renderable* _parent;
-		renderable*       _shadow;
-    
-    public:
-		material_renderable(const renderable& parent);
-		~material_renderable();
+private:
+	const renderable*  _parent;
 
-		const renderable&  get_parent() const;
-		renderable*        get_shadow() const;
-		virtual bool       render();
-		virtual bool       resize(float width, float height);
+protected:
+	drop_shadow* _shadow;
+	colour       _outline_colour;
+
+	material_renderable(const renderable* parent);
+	~material_renderable();
+
+public:
+	bool render_shadow;
+
+	const   renderable& get_parent()                   const;
+	virtual bool render();
+	virtual bool render_outline()                      = 0;
+	void    set_coordinates(float x, float y, float z);
 };
 
 #endif

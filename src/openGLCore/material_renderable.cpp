@@ -1,14 +1,22 @@
 #include "material_renderable.h"
 
-material_renderable::material_renderable(const renderable& parent)
+material_renderable::material_renderable(const renderable* parent)
 {
-	_parent = &parent;
+	_parent       = parent;
+	_coordinates  = hCoordinate(_parent->get_coordinate(X),
+		                        _parent->get_coordinate(Y),
+								_parent->get_coordinate(Z) + 2);
+	render_shadow = true;
+	_shadow       = nullptr;
+	_depth        = 1;
 }
 
 material_renderable::~material_renderable()
 {
 	_parent = nullptr;
-	delete _shadow;
+
+	if (_shadow)
+		delete _shadow;
 }
 
 const renderable& material_renderable::get_parent() const
@@ -16,23 +24,17 @@ const renderable& material_renderable::get_parent() const
 	return *_parent;
 }
 
-renderable* material_renderable::get_shadow() const
-{
-	return _shadow;
-}
-
 bool material_renderable::render()
 {
-	if (_shadow)
-		_shadow->render();
+	if (render_shadow && _shadow)
+		return _shadow->render();
 
-	return true;
+	return false;
 }
 
-bool material_renderable::resize(float width, float height)
+void material_renderable::set_coordinates(float x, float y, float z)
 {
-    if (_shadow)
-    	_shadow->resize(width, height);
-
-	return true;
+	_coordinates = hCoordinate(_parent->get_coordinate(X) + x,
+		                       _parent->get_coordinate(Y) + y,
+							   _coordinates.get_z());
 }

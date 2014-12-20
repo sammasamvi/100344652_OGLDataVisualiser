@@ -13,6 +13,28 @@ colour renderable::get_colour() const
 	return _colour;
 }
 
+float renderable::get_coordinate(eHCoordinate coordinate) const
+{
+	switch (coordinate)
+	{
+	case W:
+		return _coordinates.get_w();
+		break;
+
+	case X:
+		return _coordinates.get_x();
+		break;
+
+	case Y:
+		return _coordinates.get_y();
+		break;
+
+	case Z:
+		return _coordinates.get_z();
+		break;
+	}
+}
+
 hCoordinate renderable::get_coordinates() const
 {
 	return _coordinates;
@@ -95,7 +117,9 @@ void renderable::set_colour(const colour& value)
 
 void renderable::set_coordinates(const hCoordinate& value)
 {
-	_coordinates = hCoordinate(value);
+	set_coordinates(value.get_x(), 
+		            value.get_y(), 
+					value.get_z());
 }
 
 void renderable::set_coordinates(float x, float y, float z)
@@ -105,7 +129,9 @@ void renderable::set_coordinates(float x, float y, float z)
 
 void renderable::set_coordinates(float x, float y)
 {
-	set_coordinates(x, y, _coordinates.get_z());
+	set_coordinates(x, 
+		            y, 
+					_coordinates.get_z());
 }
 
 void renderable::set_depth(float depth)

@@ -20,12 +20,6 @@
     <ClCompile Include="openGLShapes\material_rectangle.cpp">
       <Filter>souce\openGLShapes</Filter>
     </ClCompile>
-    <ClCompile Include="openGLCore\material_renderable.cpp">
-      <Filter>souce\openGLCore</Filter>
-    </ClCompile>
-    <ClCompile Include="openGLDataVisualiser\material_data_representer.cpp">
-      <Filter>souce\openGLDataVisualiser</Filter>
-    </ClCompile>
     <ClCompile Include="win32Util\csv_file_reader.cpp">
       <Filter>souce\win32Util</Filter>
     </ClCompile>
@@ -34,6 +28,12 @@
     </ClCompile>
     <ClCompile Include="win32Core\common_dialog_wrapper.cpp">
       <Filter>souce\win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\material_renderable.cpp">
+      <Filter>souce\openGLCore</Filter>
+    </ClCompile>
+    <ClCompile Include="openGLCore\drop_shadow.cpp">
+      <Filter>souce\openGLCore</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -67,15 +67,6 @@
     <ClInclude Include="openGLShapes\material_rectangle.h">
       <Filter>header\openGLShapes</Filter>
     </ClInclude>
-    <ClInclude Include="openGLCore\material_renderable.h">
-      <Filter>header\openGLCore</Filter>
-    </ClInclude>
-    <ClInclude Include="openGLDataVisualiser\material_data_representer.h">
-      <Filter>header\openGLDataVisualiser</Filter>
-    </ClInclude>
-    <ClInclude Include="openGLDataVisualiser\material_data_visualizer.h">
-      <Filter>header\openGLDataVisualiser</Filter>
-    </ClInclude>
     <ClInclude Include="win32Util\text_file_reader.h">
       <Filter>header\win32Util</Filter>
     </ClInclude>
@@ -87,6 +78,15 @@
     </ClInclude>
     <ClInclude Include="win32Core\common_dialog_wrapper.h">
       <Filter>header\win32Core</Filter>
+    </ClInclude>
+    <ClInclude Include="openGLCore\drop_shadow.h">
+      <Filter>header\openGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="openGLCore\material_renderable.h">
+      <Filter>header\openGLCore</Filter>
+    </ClInclude>
+    <ClInclude Include="openGLCore\enums\eHCoordinate.h">
+      <Filter>header\openGLCore\enum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

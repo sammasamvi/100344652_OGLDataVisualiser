@@ -5,12 +5,13 @@
 renderContext::renderContext(HWND& windowHandle)
 {
 	_renderingDeviceContextHandle = GetDC(windowHandle);
-	_scene                        = new material_rectangle(*this);
+	_scene                        = new material_rectangle(this);
 	_windowHandle                 = &windowHandle;
 
 	_scene->set_coordinates(10, 10);
 	_scene->set_height(200);
 	_scene->set_width(60);
+	_scene->set_colour(255, 255, 255);
 }
 
 renderContext::~renderContext()
@@ -103,8 +104,8 @@ bool renderContext::resize(float width, float height)
 			-5.0f,  //near
 			5.0f);  //far
 
-	if (_scene)
-		rendered = _scene->resize(_width, _height);
+	//if (_scene)
+	//	rendered = _scene->resize(_width, _height);
 
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
@@ -131,7 +132,7 @@ void renderContext::set_ogl_vars()
 	assert_glClearColor();
 
 	glDisable(GL_DEPTH_TEST);
-	glDisable(GL_CULL_FACE);
+	glEnable(GL_CULL_FACE);
 }
 
 void renderContext::set_render_scene(renderable& scene)

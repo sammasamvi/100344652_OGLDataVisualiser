@@ -4,6 +4,7 @@
 win32ApplicationWindow::win32ApplicationWindow()
 {
 	_oGLRenderContext  = nullptr;
+	_open_dialog       = nullptr;
 	_menu              = LoadMenu(_applicationInstance, MAKEINTRESOURCE(IDR_MENU));
 }
 
@@ -14,6 +15,9 @@ win32ApplicationWindow::~win32ApplicationWindow()
 
 	if (_open_dialog)
 		delete _open_dialog;
+
+	_oGLRenderContext = nullptr;
+	_open_dialog      = nullptr;
 }
 
 win32ApplicationWindow* win32ApplicationWindow::applicationWindowInstance = NULL;
@@ -29,7 +33,7 @@ void win32ApplicationWindow::createApplicationWindow(int nCmdShow, int width, in
 
 	_oGLRenderContext = new renderContext(_windowHandle);
 	_oGLRenderContext->init_renderContext(width, height);
-	_oGLRenderContext->set_colour(255, 144, 0, 255);
+	_oGLRenderContext->set_colour(255, 255, 255, 255);
 
 	_open_dialog = new common_dialog_wrapper(_windowHandle);
 	_open_dialog->set_title(L"Open Data File");

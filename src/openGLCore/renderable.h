@@ -4,6 +4,7 @@
 #include "colour.h"
 #include "homogeneous_coordinate.h"
 #include "enums\eDimention.h"
+#include "enums\eHCoordinate.h"
 
 class renderable
 {
@@ -18,6 +19,7 @@ class renderable
 		renderable();
     public:
 		virtual colour      get_colour()                                                 const;
+		virtual float       get_coordinate(eHCoordinate coordinate)                      const;
 		virtual hCoordinate get_coordinates()                                            const;
 		virtual float       get_dimention(eDimention dimention)                          const;
 		virtual bool        render()                                                            = 0;

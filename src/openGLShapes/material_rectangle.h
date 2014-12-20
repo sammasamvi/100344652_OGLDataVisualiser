@@ -5,14 +5,11 @@
 
 class material_rectangle final : public material_renderable
 {
-    private:
-		material_rectangle(const material_rectangle* parent);
-
     public:
-		material_rectangle(const renderable& parent);
+		material_rectangle(const renderable* parent);
 
 		bool render();
-		bool resize(int width, int height);
+		bool render_outline();
 };
 
 #endif

@@ -80,19 +80,20 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>kernel32.lib;opengl32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="openGLCore\colour.h" />
+    <ClInclude Include="openGLCore\drop_shadow.h" />
     <ClInclude Include="openGLCore\enums\eColour.h" />
+    <ClInclude Include="openGLCore\enums\eHCoordinate.h" />
     <ClInclude Include="openGLCore\enums\eDimention.h" />
     <ClInclude Include="openGLCore\enums\eMargin.h" />
     <ClInclude Include="openGLCore\homogeneous_coordinate.h" />
     <ClInclude Include="openGLCore\material_renderable.h" />
     <ClInclude Include="openGLCore\renderable.h" />
     <ClInclude Include="openGLCore\renderContext.h" />
-    <ClInclude Include="openGLDataVisualiser\material_data_representer.h" />
-    <ClInclude Include="openGLDataVisualiser\material_data_visualizer.h" />
     <ClInclude Include="openGLShapes\material_rectangle.h" />
     <ClInclude Include="win32Core\applicationWindow.h" />
     <ClInclude Include="win32Core\application_window_resources.h" />
@@ -104,11 +105,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="openGLCore\colour.cpp" />
+    <ClCompile Include="openGLCore\drop_shadow.cpp" />
     <ClCompile Include="openGLCore\homogeneous_coordinate.cpp" />
     <ClCompile Include="openGLCore\material_renderable.cpp" />
     <ClCompile Include="openGLCore\renderable.cpp" />
     <ClCompile Include="openGLCore\renderContext.cpp" />
-    <ClCompile Include="openGLDataVisualiser\material_data_representer.cpp" />
     <ClCompile Include="openGLShapes\material_rectangle.cpp" />
     <ClCompile Include="win32Core\applicationWindow.cpp" />
     <ClCompile Include="win32Core\common_dialog_wrapper.cpp" />

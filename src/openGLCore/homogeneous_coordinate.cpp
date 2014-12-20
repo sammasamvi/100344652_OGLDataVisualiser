@@ -6,18 +6,13 @@ hCoordinate::hCoordinate(float x, float y, float z, bool w)
 	_x = x;
 	_y = y;
 	_z = z;
-
-	_oGLVArray_length = 3;
-	_oGLVArray        = new float[_oGLVArray_length];
 }
 
 hCoordinate::hCoordinate(float x, float y, float z) : hCoordinate(x, y, z, true)
 { }
 
 hCoordinate::hCoordinate(float x, float y) : hCoordinate(x, y, 0, true)
-{
-	_oGLVArray_length = 2;
-}
+{ }
 
 hCoordinate::hCoordinate(const hCoordinate& original)
 {
@@ -26,7 +21,9 @@ hCoordinate::hCoordinate(const hCoordinate& original)
 
 hCoordinate::~hCoordinate()
 {
-	delete[] _oGLVArray;
+	_x = 0;
+	_y = 0;
+	_z = 0;
 }
 
 hCoordinate::hCoordinate() : hCoordinate(0, 0, 0, true)
@@ -38,19 +35,6 @@ void hCoordinate::assign_from(const hCoordinate& src)
 	_x = src.get_x();
 	_y = src.get_y();
 	_z = src.get_z();
-
-	_oGLVArray_length = src.get_oGLVArray_length();
-	_oGLVArray        = src.get_oGLVArray();
-}
-
-float* hCoordinate::get_oGLVArray() const
-{
-	return _oGLVArray;
-}
-
-const int hCoordinate::get_oGLVArray_length() const
-{
-	return _oGLVArray_length;
 }
 
 const int hCoordinate::get_w() const

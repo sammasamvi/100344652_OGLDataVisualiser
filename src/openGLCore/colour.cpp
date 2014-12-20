@@ -18,9 +18,9 @@ colour::colour(int red, int green, int blue) : colour(red, green, blue, 0)
 colour::colour(const colour& original)
 {
 	set_value(Alpha, original._alpha);
-	set_value(Blue,  original._alpha);
-	set_value(Green, original._alpha);
-	set_value(Red,   original._alpha);
+	set_value(Blue,  original._blue);
+	set_value(Green, original._green);
+	set_value(Red,   original._red);
 }
 
 colour::colour() : colour(0, 0, 0, 0)
