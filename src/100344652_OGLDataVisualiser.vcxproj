@@ -113,6 +113,7 @@
     <ClCompile Include="openGLShapes\material_rectangle.cpp" />
     <ClCompile Include="win32Core\applicationWindow.cpp" />
     <ClCompile Include="win32Core\common_dialog_wrapper.cpp" />
+    <ClCompile Include="win32Core\input_event_handler.h" />
     <ClCompile Include="win32Util\csv_file_reader.cpp" />
     <ClCompile Include="win32Util\text_file_reader.cpp" />
   </ItemGroup>

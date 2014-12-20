@@ -6,7 +6,7 @@ drop_shadow::drop_shadow(renderable* parent)
 	_parent           = parent;
 	_gparent          = &(static_cast<material_renderable*>(_parent)->get_parent());
 	_render_attempted = false;
-	_opacity          = 0.70;
+	_opacity          = 0.70f;
 }
 
 drop_shadow::~drop_shadow()
@@ -40,17 +40,30 @@ void drop_shadow::calc_shadow_variables()
 	_parent->set_colour((*(_gparent_colour.get_red()) * _opacity),
 		                (*(_gparent_colour.get_green()) * _opacity), 
 						(*(_gparent_colour.get_green()) * _opacity),
-						255);
+						255.0f);
 
 	float z_difference = _parent_coordinates.get_z() - _gparent->get_coordinate(Z);
 
-	_parent->set_coordinates(_parent_coordinates.get_x() - 2,
-		                     _parent_coordinates.get_y() - z_difference,
-							 _gparent->get_coordinate(Z));
+	if (z_difference >= 1)
+	{
+		_parent->set_coordinates(_parent_coordinates.get_x() + (1.5f * z_difference),
+                                 _parent_coordinates.get_y() - (1.5f * z_difference),
+                                 _gparent->get_coordinate(Z));
 
-	_parent->set_depth(0);
-	_parent->set_height(_parent_height);
-	_parent->set_width(_parent_width + 4.5);
+		_parent->set_depth(0);
+		_parent->set_height(_parent_height);
+		_parent->set_width(_parent_width);
+	}
+	else if (z_difference <= 0)
+	{
+		_parent->set_coordinates(_parent_coordinates.get_x() - 1.5f,
+                                 _parent_coordinates.get_y() - 1.5f,
+                                 _gparent->get_coordinate(Z));
+
+		_parent->set_depth(0);
+		_parent->set_height(_parent_height + 3.0f);
+		_parent->set_width(_parent_width + 3.0f);
+	}
 }
 
 void drop_shadow::restore_parent_variables()

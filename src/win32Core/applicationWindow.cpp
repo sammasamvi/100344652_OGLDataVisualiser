@@ -38,7 +38,7 @@ void win32ApplicationWindow::createApplicationWindow(int nCmdShow, int width, in
 	_open_dialog = new common_dialog_wrapper(_windowHandle);
 	_open_dialog->set_title(L"Open Data File");
 	_open_dialog->set_filters(L"CSV\0*.csv\0XML\0*.xml\0\0");
-
+	
 	SetMenu(_windowHandle, _menu);
 	ShowWindow(_windowHandle, nCmdShow); 
 	UpdateWindow(_windowHandle);
@@ -86,13 +86,11 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 		    return 0;
 
 	    case ID_FILEMENU_ITEM_EXIT:
-			applicationWindowInstance->_open = false;
-			PostQuitMessage(0);
+			PostMessage(_windowHandle, WM_CLOSE, 0, 0);
 	    	return 0;
 
 		case ID_FILEMENU_ITEM_OPENFILE:
 			applicationWindowInstance->_open_dialog->open();
-
 			return 0;
 
 	    default:
@@ -114,7 +112,6 @@ int win32ApplicationWindow::run(int nCmdShow, int width, int height)
 			if (message.message == WM_QUIT)
 			{
 				applicationWindowInstance->_open = false;
-				PostQuitMessage(0);
 			}
 			else
 			{
@@ -132,6 +129,7 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc(HWND _windowHandle, UINT messag
 {
 	switch (message)
 	{
+	    case WM_QUIT:
 		case WM_CLOSE:
 		case WM_DESTROY:
 			PostQuitMessage(0);
@@ -140,12 +138,16 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc(HWND _windowHandle, UINT messag
 		case WM_COMMAND:
 			return WndProc_menu_handle(_windowHandle, message, _WPARAM, _LPARAM);
 
+		case WM_HOTKEY:
+			MessageBox(NULL, _T("Hotkey 'ALT+b' used from WndProc\n"), _T("ApplicationWindow"), NULL);
+			return 0;
+
 		case WM_PAINT:
 			applicationWindowInstance->_oGLRenderContext->render();
 			return 0;
 
 		case WM_SIZE:
-			applicationWindowInstance->_oGLRenderContext->resize(LOWORD(_LPARAM), HIWORD(_LPARAM));
+			applicationWindowInstance->_oGLRenderContext->resize(LOWORD(_LPARAM) + 100.0f, HIWORD(_LPARAM) + 100.0f);
 			return 0;
 
 		default:

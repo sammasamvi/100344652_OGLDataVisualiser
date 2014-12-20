@@ -35,6 +35,9 @@
     <ClCompile Include="openGLCore\drop_shadow.cpp">
       <Filter>souce\openGLCore</Filter>
     </ClCompile>
+    <ClCompile Include="win32Core\input_event_handler.h">
+      <Filter>header\win32Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="openGLCore\enums\eColour.h">

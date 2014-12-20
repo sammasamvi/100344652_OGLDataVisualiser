@@ -18,22 +18,22 @@ class renderable
 
 		renderable();
     public:
-		virtual colour      get_colour()                                                 const;
-		virtual float       get_coordinate(eHCoordinate coordinate)                      const;
-		virtual hCoordinate get_coordinates()                                            const;
-		virtual float       get_dimention(eDimention dimention)                          const;
-		virtual bool        render()                                                            = 0;
-		virtual bool        resize(float width, float height);
-		virtual void        set_colour(const colour& value);
-		virtual void        set_colour(int red, int green, int blue);
-		virtual void        set_colour(int red, int green, int blue, int alpha);
-		virtual void        set_colour_channel(eColour channel, int value);
-		virtual void        set_coordinates(const hCoordinate& value);
-		virtual void        set_coordinates(float x, float y);
-		virtual void        set_coordinates(float x, float y, float z);
-		virtual void        set_depth(float depth);
-		virtual void        set_height(float height);
-		virtual void        set_width(float width);
+		colour       get_colour()                                                 const;
+		float        get_coordinate(eHCoordinate coordinate)                      const;
+		hCoordinate  get_coordinates()                                            const;
+		float        get_dimention(eDimention dimention)                          const;
+		virtual bool render()                                                            = 0;
+		bool         resize(float width, float height);
+		void         set_colour(const colour& value);
+		void         set_colour(int red, int green, int blue);
+		void         set_colour(int red, int green, int blue, int alpha);
+		void         set_colour_channel(eColour channel, int value);
+		void         set_coordinates(const hCoordinate& value);
+		void         set_coordinates(float x, float y);
+		void         set_coordinates(float x, float y, float z);
+		void         set_depth(float depth);
+		void         set_height(float height);
+		void         set_width(float width);
 };
 
 #endif
