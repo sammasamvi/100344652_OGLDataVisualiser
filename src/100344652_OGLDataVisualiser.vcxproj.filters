@@ -32,11 +32,14 @@
     <ClCompile Include="openGLCore\material_renderable.cpp">
       <Filter>souce\openGLCore</Filter>
     </ClCompile>
-    <ClCompile Include="openGLCore\drop_shadow.cpp">
-      <Filter>souce\openGLCore</Filter>
-    </ClCompile>
     <ClCompile Include="win32Core\input_event_handler.cpp">
       <Filter>souce\win32Core</Filter>
+    </ClCompile>
+    <ClCompile Include="materialLaw\drop_shadow.cpp">
+      <Filter>souce\materialLaw</Filter>
+    </ClCompile>
+    <ClCompile Include="materialLaw\child_renderable.cpp">
+      <Filter>souce\materialLaw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -82,9 +85,6 @@
     <ClInclude Include="win32Core\common_dialog_wrapper.h">
       <Filter>header\win32Core</Filter>
     </ClInclude>
-    <ClInclude Include="openGLCore\drop_shadow.h">
-      <Filter>header\openGLCore</Filter>
-    </ClInclude>
     <ClInclude Include="openGLCore\material_renderable.h">
       <Filter>header\openGLCore</Filter>
     </ClInclude>
@@ -108,6 +108,15 @@
     </ClInclude>
     <ClInclude Include="win32Core\mouse_move_reciever.h">
       <Filter>header\win32Core</Filter>
+    </ClInclude>
+    <ClInclude Include="materialLaws\material_interactivity.h">
+      <Filter>header\materialLaw</Filter>
+    </ClInclude>
+    <ClInclude Include="materialLaw\drop_shadow.h">
+      <Filter>header\materialLaw</Filter>
+    </ClInclude>
+    <ClInclude Include="materialLaw\child_renderable.h">
+      <Filter>header\materialLaw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +170,12 @@
     </Filter>
     <Filter Include="header\win32Core\enum">
       <UniqueIdentifier>{99ea025d-3e41-4dfc-85a8-37ae57e05d84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="souce\materialLaw">
+      <UniqueIdentifier>{0a092483-cef3-47d9-aaa4-b6a1d7f9ebcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="header\materialLaw">
+      <UniqueIdentifier>{aacb39ac-299b-4e0c-9cd0-b07ecbc2f3d2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

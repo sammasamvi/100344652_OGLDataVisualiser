@@ -1,14 +1,11 @@
 #ifndef MATERIAL_RENDERABLE_H
 #define MATERIAL_RENDERABLE_H
 
-#include "renderable.h"
-#include "drop_shadow.h"
+#include "..\materialLaw\child_renderable.h"
+#include "..\materialLaw\drop_shadow.h"
 
-class material_renderable : public renderable
+class material_renderable : public child_renderable
 {
-private:
-	const renderable*  _parent;
-
 protected:
 	drop_shadow* _shadow;
 	colour       _outline_colour;
@@ -19,10 +16,8 @@ protected:
 public:
 	bool render_shadow;
 
-	const   renderable& get_parent()                   const;
-	virtual bool render();
-	virtual bool render_outline()                      = 0;
-	void    set_coordinates(float x, float y, float z);
+	virtual bool render();			 
+	virtual bool render_outline()    = 0;
 };
 
 #endif

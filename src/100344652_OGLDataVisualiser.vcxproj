@@ -84,8 +84,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="materialLaws\material_interactivity.h" />
+    <ClInclude Include="materialLaw\child_renderable.h" />
+    <ClInclude Include="materialLaw\drop_shadow.h" />
     <ClInclude Include="openGLCore\colour.h" />
-    <ClInclude Include="openGLCore\drop_shadow.h" />
     <ClInclude Include="openGLCore\enums\eColour.h" />
     <ClInclude Include="openGLCore\enums\eHCoordinate.h" />
     <ClInclude Include="openGLCore\enums\eDimention.h" />
@@ -110,8 +112,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="materialLaw\child_renderable.cpp" />
+    <ClCompile Include="materialLaw\drop_shadow.cpp" />
     <ClCompile Include="openGLCore\colour.cpp" />
-    <ClCompile Include="openGLCore\drop_shadow.cpp" />
     <ClCompile Include="openGLCore\homogeneous_coordinate.cpp" />
     <ClCompile Include="openGLCore\material_renderable.cpp" />
     <ClCompile Include="openGLCore\renderable.cpp" />
