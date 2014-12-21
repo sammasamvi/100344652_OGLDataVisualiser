@@ -49,4 +49,3 @@ bool material_rectangle::render_outline()
 
 	return true;
 }
-

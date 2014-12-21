@@ -1,5 +1,6 @@
 #include "applicationWindow.h"
 #include "application_window_resources.h"
+#include "input_event_handler.h"
 
 win32ApplicationWindow::win32ApplicationWindow()
 {
@@ -15,6 +16,8 @@ win32ApplicationWindow::~win32ApplicationWindow()
 
 	if (_open_dialog)
 		delete _open_dialog;
+
+	DestroyWindow(_windowHandle);
 
 	_oGLRenderContext = nullptr;
 	_open_dialog      = nullptr;
@@ -101,6 +104,7 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 int win32ApplicationWindow::run(int nCmdShow, int width, int height)
 {
 	applicationWindowInstance->createApplicationWindow(nCmdShow, width, height);
+	input_event_handler::init();
 
 	MSG message;
 	
@@ -122,6 +126,7 @@ int win32ApplicationWindow::run(int nCmdShow, int width, int height)
 	}
 
 	delete applicationWindowInstance;
+	input_event_handler::close();
 	return (int)message.wParam;
 }
 
@@ -138,16 +143,40 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc(HWND _windowHandle, UINT messag
 		case WM_COMMAND:
 			return WndProc_menu_handle(_windowHandle, message, _WPARAM, _LPARAM);
 
-		case WM_HOTKEY:
-			MessageBox(NULL, _T("Hotkey 'ALT+b' used from WndProc\n"), _T("ApplicationWindow"), NULL);
+		case WM_KEYDOWN:
+			// U-I
+			return 0;
+
+		case WM_LBUTTONDBLCLK:
+			input_event_handler::event_handler->raise_mouse_event_click(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
+			return 0;
+
+		case WM_LBUTTONDOWN:
+			input_event_handler::event_handler->raise_mouse_event_left_button_down(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
+			return 0;
+
+		case WM_LBUTTONUP:
+			input_event_handler::event_handler->raise_mouse_event_left_button_up(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
+			return 0;
+
+		case WM_MOUSEMOVE:
+			input_event_handler::event_handler->raise_mouse_event_move(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
 			return 0;
 
 		case WM_PAINT:
 			applicationWindowInstance->_oGLRenderContext->render();
 			return 0;
 
+		case WM_RBUTTONDOWN:
+			input_event_handler::event_handler->raise_mouse_event_right_button_down(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
+			return 0;
+
+		case WM_RBUTTONUP:
+			input_event_handler::event_handler->raise_mouse_event_right_button_up(GET_X_LPARAM(_LPARAM), GET_Y_LPARAM(_LPARAM));
+			return 0;
+
 		case WM_SIZE:
-			applicationWindowInstance->_oGLRenderContext->resize(LOWORD(_LPARAM) + 100.0f, HIWORD(_LPARAM) + 100.0f);
+			applicationWindowInstance->_oGLRenderContext->resize(LOWORD(_LPARAM), HIWORD(_LPARAM));
 			return 0;
 
 		default:

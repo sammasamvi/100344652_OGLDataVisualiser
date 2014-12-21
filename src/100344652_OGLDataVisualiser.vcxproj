@@ -98,8 +98,14 @@
     <ClInclude Include="win32Core\applicationWindow.h" />
     <ClInclude Include="win32Core\application_window_resources.h" />
     <ClInclude Include="win32Core\common_dialog_wrapper.h" />
+    <ClInclude Include="win32Core\input_event_handler.h" />
+    <ClInclude Include="win32Core\mouse_button_reciever.h" />
+    <ClInclude Include="win32Core\mouse_click_reciever.h" />
+    <ClInclude Include="win32Core\mouse_move_reciever.h" />
     <ClInclude Include="win32Util\csv_file_reader.h" />
     <ClInclude Include="win32Util\enums\eFileState.h" />
+    <ClInclude Include="win32Util\generic_linkedd_list_node.h" />
+    <ClInclude Include="win32Util\generic_linked_list.h" />
     <ClInclude Include="win32Util\text_file_reader.h" />
   </ItemGroup>
   <ItemGroup>
@@ -113,7 +119,7 @@
     <ClCompile Include="openGLShapes\material_rectangle.cpp" />
     <ClCompile Include="win32Core\applicationWindow.cpp" />
     <ClCompile Include="win32Core\common_dialog_wrapper.cpp" />
-    <ClCompile Include="win32Core\input_event_handler.h" />
+    <ClCompile Include="win32Core\input_event_handler.cpp" />
     <ClCompile Include="win32Util\csv_file_reader.cpp" />
     <ClCompile Include="win32Util\text_file_reader.cpp" />
   </ItemGroup>

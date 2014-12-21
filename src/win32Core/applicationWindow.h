@@ -2,7 +2,7 @@
 #define WIN32_APPLICATION_WINDOW_H
 
 #include <tchar.h>
-#include <Windows.h>
+#include <Windowsx.h>
 
 #include "..\openGLCore\renderContext.h"
 #include "common_dialog_wrapper.h"
