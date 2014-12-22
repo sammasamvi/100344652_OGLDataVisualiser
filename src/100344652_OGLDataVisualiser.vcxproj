@@ -84,7 +84,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="materialLaws\material_interactivity.h" />
     <ClInclude Include="materialLaw\child_renderable.h" />
     <ClInclude Include="materialLaw\drop_shadow.h" />
     <ClInclude Include="openGLCore\colour.h" />

@@ -16,8 +16,16 @@ material_renderable::~material_renderable()
 
 bool material_renderable::render()
 {
-	if (render_shadow && _shadow)
-		return _shadow->render();
+	bool rendered = true;
 
-	return false;
+	if (render_shadow && _shadow)
+		rendered = _shadow->render();
+
+	if (rendered)
+		rendered = render_fill();
+
+	if (rendered)
+		return render_outline();
+
+	return rendered;
 }

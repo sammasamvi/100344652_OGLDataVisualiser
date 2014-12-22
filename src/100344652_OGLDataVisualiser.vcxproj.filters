@@ -109,9 +109,6 @@
     <ClInclude Include="win32Core\mouse_move_reciever.h">
       <Filter>header\win32Core</Filter>
     </ClInclude>
-    <ClInclude Include="materialLaws\material_interactivity.h">
-      <Filter>header\materialLaw</Filter>
-    </ClInclude>
     <ClInclude Include="materialLaw\drop_shadow.h">
       <Filter>header\materialLaw</Filter>
     </ClInclude>

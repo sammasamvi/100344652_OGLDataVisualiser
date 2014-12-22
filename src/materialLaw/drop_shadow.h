@@ -14,7 +14,6 @@ class drop_shadow final
 		float             _parent_depth;
 		float             _parent_height;
 		float             _parent_width;
-		bool              _render_attempted;
 
 		void store_parent_variables();
 		void calc_shadow_variables();

@@ -7,10 +7,8 @@ material_rectangle::material_rectangle(const renderable* parent) : material_rend
     _shadow = new drop_shadow(this);
 }
 
-bool material_rectangle::render()
+bool material_rectangle::render_fill()
 {
-	bool shadow_rendered = material_renderable::render();
-
 	glColor3f(_colour.get_colour_channel(Red),
 		      _colour.get_colour_channel(Green),
 		      _colour.get_colour_channel(Blue));
@@ -21,9 +19,6 @@ bool material_rectangle::render()
 		glVertex3f(_coordinates.get_x() + _width, _coordinates.get_y() + _height, _coordinates.get_z());
 		glVertex3f(_coordinates.get_x(),          _coordinates.get_y() + _height, _coordinates.get_z());
     glEnd();
-
-	if (shadow_rendered)
-		render_outline();
 
 	return true;
 }

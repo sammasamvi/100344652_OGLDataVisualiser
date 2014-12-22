@@ -1,12 +1,11 @@
 #include "drop_shadow.h"
-
+#include "..\openGLCore\material_renderable.h"
 
 drop_shadow::drop_shadow(child_renderable* parent)
 {
-	_parent           = parent;
-	_gparent          = _parent->get_parent();
-	_render_attempted = false;
-	_opacity          = 0.70f;
+	_parent  = parent;
+	_gparent = _parent->get_parent();
+	_opacity = 0.70f;
 }
 
 drop_shadow::~drop_shadow()
@@ -16,45 +15,38 @@ drop_shadow::~drop_shadow()
 
 bool drop_shadow::render()
 {
-	if (!_render_attempted)
-	{
-		_render_attempted = true;
+	bool rendered = false;
 
-		store_parent_variables();
-		calc_shadow_variables();
+	store_parent_variables();
+	calc_shadow_variables();
 
-		_parent->render();
+	rendered = static_cast<material_renderable*>(_parent)->render_fill();
 
-		restore_parent_variables();
+	restore_parent_variables();
 
-		_render_attempted = false;
-	}
-
-	return !_render_attempted;
+	return rendered;
 }
 
 void drop_shadow::calc_shadow_variables()
 {
 	colour _gparent_colour = _gparent->get_colour();
 
-	_parent->set_colour((*(_gparent_colour.get_red()) * _opacity),
+	_parent->set_colour((*(_gparent_colour.get_red())   * _opacity),
 		                (*(_gparent_colour.get_green()) * _opacity), 
 						(*(_gparent_colour.get_green()) * _opacity),
 						255.0f);
 
 	float z_difference = _parent_coordinates.get_z() - _gparent->get_coordinate(Z);
 
-	if (z_difference >= 1)
+	if (z_difference >= 1.01f)
 	{
 		_parent->set_coordinates(_parent_coordinates.get_x() + (1.5f * z_difference),
                                  _parent_coordinates.get_y() - (1.5f * z_difference),
                                  _gparent->get_coordinate(Z));
 
 		_parent->set_depth(0);
-		_parent->set_height(_parent_height);
-		_parent->set_width(_parent_width);
 	}
-	else if (z_difference <= 0)
+	else if (z_difference <= 1.00f)
 	{
 		_parent->set_coordinates(_parent_coordinates.get_x() - 1.5f,
                                  _parent_coordinates.get_y() - 1.5f,

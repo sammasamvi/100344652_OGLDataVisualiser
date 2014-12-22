@@ -8,7 +8,7 @@ class material_rectangle final : public material_renderable
     public:
 		material_rectangle(const renderable* parent);
 
-		bool render();
+		bool render_fill();
 		bool render_outline();
 };
 
