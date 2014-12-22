@@ -25,7 +25,7 @@ void child_renderable::set_coordinates(float x, float y, float z)
 	float _z = z + _parent->get_coordinate(Z);
 
 	_x = (_x - _parent->get_coordinate(X)) > 0.00f ? _x : 0.0f;
-	_x = (_y - _parent->get_coordinate(Y)) > 0.00f ? _y : 0.0f;
+	_y = (_y - _parent->get_coordinate(Y)) > 0.00f ? _y : 0.0f;
 	_z = (_z - _parent->get_coordinate(Z)) > 0.99f ? _z : 1.0f;
 
 	_coordinates = hCoordinate(_x, _y, _z);

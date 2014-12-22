@@ -34,7 +34,7 @@ void drop_shadow::calc_shadow_variables()
 	_parent->set_colour((*(_gparent_colour.get_red())   * _opacity),
 		                (*(_gparent_colour.get_green()) * _opacity), 
 						(*(_gparent_colour.get_green()) * _opacity),
-						255.0f);
+						255);
 
 	float z_difference = _parent_coordinates.get_z() - _gparent->get_coordinate(Z);
 

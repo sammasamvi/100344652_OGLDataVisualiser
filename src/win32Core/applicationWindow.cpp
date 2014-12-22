@@ -103,8 +103,9 @@ LRESULT CALLBACK win32ApplicationWindow::WndProc_menu_handle(HWND _windowHandle,
 
 int win32ApplicationWindow::run(int nCmdShow, int width, int height)
 {
-	applicationWindowInstance->createApplicationWindow(nCmdShow, width, height);
 	input_event_handler::init();
+	applicationWindowInstance->createApplicationWindow(nCmdShow, width, height);
+	
 
 	MSG message;
 	

@@ -1,6 +1,7 @@
 #include "renderContext.h"
 #include <gl\GL.h>
 #include "..\openGLShapes\material_rectangle.h"
+#include "..\materialLaw\material_interactivity.h"
 
 renderContext::renderContext(HWND& windowHandle)
 {
@@ -12,6 +13,8 @@ renderContext::renderContext(HWND& windowHandle)
 	_scene->set_height(200);
 	_scene->set_width(60);
 	_scene->set_colour(255, 255, 255);
+
+	material_interactivity::set_render_context(this);
 }
 
 renderContext::~renderContext()

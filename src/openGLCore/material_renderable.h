@@ -2,8 +2,9 @@
 #define MATERIAL_RENDERABLE_H
 
 #include "..\materialLaw\drop_shadow.h"
+#include "..\materialLaw\material_interactivity.h"
 
-class material_renderable : public child_renderable
+class material_renderable : public child_renderable, public material_interactivity
 {
 protected:
 	drop_shadow* _shadow;
@@ -15,7 +16,7 @@ protected:
 public:
 	bool render_shadow;
 
-	virtual bool render();
+	bool render();
 	virtual bool render_fill()    = 0;
 	virtual bool render_outline() = 0;
 };

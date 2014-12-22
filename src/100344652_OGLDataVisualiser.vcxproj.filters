@@ -41,6 +41,12 @@
     <ClCompile Include="materialLaw\child_renderable.cpp">
       <Filter>souce\materialLaw</Filter>
     </ClCompile>
+    <ClCompile Include="materialLaw\material_interactivity.cpp">
+      <Filter>souce\materialLaw</Filter>
+    </ClCompile>
+    <ClCompile Include="materialLaw\peripherial_reference.cpp">
+      <Filter>souce\materialLaw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="openGLCore\enums\eColour.h">
@@ -113,6 +119,15 @@
       <Filter>header\materialLaw</Filter>
     </ClInclude>
     <ClInclude Include="materialLaw\child_renderable.h">
+      <Filter>header\materialLaw</Filter>
+    </ClInclude>
+    <ClInclude Include="materialLaw\material_interactivity.h">
+      <Filter>header\materialLaw</Filter>
+    </ClInclude>
+    <ClInclude Include="win32Util\mouse.h">
+      <Filter>header\win32Util</Filter>
+    </ClInclude>
+    <ClInclude Include="materialLaw\peripheral_reference.h">
       <Filter>header\materialLaw</Filter>
     </ClInclude>
   </ItemGroup>

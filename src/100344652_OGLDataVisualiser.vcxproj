@@ -86,6 +86,8 @@
   <ItemGroup>
     <ClInclude Include="materialLaw\child_renderable.h" />
     <ClInclude Include="materialLaw\drop_shadow.h" />
+    <ClInclude Include="materialLaw\material_interactivity.h" />
+    <ClInclude Include="materialLaw\peripheral_reference.h" />
     <ClInclude Include="openGLCore\colour.h" />
     <ClInclude Include="openGLCore\enums\eColour.h" />
     <ClInclude Include="openGLCore\enums\eHCoordinate.h" />
@@ -107,12 +109,15 @@
     <ClInclude Include="win32Util\enums\eFileState.h" />
     <ClInclude Include="win32Util\generic_linkedd_list_node.h" />
     <ClInclude Include="win32Util\generic_linked_list.h" />
+    <ClInclude Include="win32Util\mouse.h" />
     <ClInclude Include="win32Util\text_file_reader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="materialLaw\child_renderable.cpp" />
     <ClCompile Include="materialLaw\drop_shadow.cpp" />
+    <ClCompile Include="materialLaw\material_interactivity.cpp" />
+    <ClCompile Include="materialLaw\peripherial_reference.cpp" />
     <ClCompile Include="openGLCore\colour.cpp" />
     <ClCompile Include="openGLCore\homogeneous_coordinate.cpp" />
     <ClCompile Include="openGLCore\material_renderable.cpp" />

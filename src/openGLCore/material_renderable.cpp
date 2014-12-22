@@ -1,6 +1,6 @@
 #include "material_renderable.h"
 
-material_renderable::material_renderable(const renderable* parent) : child_renderable(parent)
+material_renderable::material_renderable(const renderable* parent) : child_renderable(parent), material_interactivity(this)
 {
 	render_shadow = true;
 	_shadow       = nullptr;
